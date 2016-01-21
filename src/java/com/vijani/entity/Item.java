@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
 /**
@@ -24,9 +25,11 @@ public class Item implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    // private Category category;
+    @OneToOne
+    private Category category;
     
-    // private Customer sellar;
+    @OneToOne
+    private User sellar;
     
     private String itemName;
     private Double price;

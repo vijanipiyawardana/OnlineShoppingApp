@@ -24,7 +24,8 @@ public class User implements Serializable {
     private Long id;  
     
     
-    // private Customer customer;
+    @OneToOne
+    private Customer customer;
     
     private String username;
     private String password;
