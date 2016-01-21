@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="OnlineShoppingAppPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>com.vijani.entity.Customer</class>
+    <class>com.vijani.entity.Category</class>
+    <class>com.vijani.entity.User</class>
+    <class>com.vijani.entity.Order</class>
+    <class>com.vijani.entity.Item</class>
+    <class>com.vijani.entity.CustomerAddress</class>
+    <class>com.vijani.entity.CustomerPhone</class>
+    <class>com.vijani.entity.ItemImage</class>
+    <class>com.vijani.entity.OrderItem</class>
+    <class>com.vijani.entity.ItemCategory</class>
+    <class>com.vijani.entity.Payment</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/eshopping?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.password" value="1688As1BVcss"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+    </properties>
+  </persistence-unit>
+</persistence>
