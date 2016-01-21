@@ -23,8 +23,10 @@ public class CustomerAddress implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToOne(cascade = CascadeType.MERGE)
-    private Customer customer;
+    
+    // @OneToOne(cascade = CascadeType.MERGE)
+    // private Customer customer;
+    
     private String doorNo;
     private String streetName;
     private String city;
@@ -79,13 +81,14 @@ public class CustomerAddress implements Serializable {
         this.markDefault = markDefault;
     }
 
-    public Customer getCustomer() {
+   /* public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+    */
 
     @Override
     public int hashCode() {

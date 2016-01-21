@@ -23,8 +23,10 @@ public class ItemImage implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToOne(cascade = CascadeType.MERGE)
-    private Item item;
+    
+    //@OneToOne(cascade = CascadeType.MERGE)
+    //private Item item;
+    
     private String imageName;
 
     public Long getId() {
@@ -43,13 +45,13 @@ public class ItemImage implements Serializable {
         this.imageName = imageName;
     }
 
-    public Item getItem() {
+    /*public Item getItem() {
         return item;
     }
 
     public void setItem(Item item) {
         this.item = item;
-    }
+    }*/
     
     @Override
     public int hashCode() {

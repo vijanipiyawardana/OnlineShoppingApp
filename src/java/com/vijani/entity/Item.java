@@ -25,10 +25,13 @@ public class Item implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToOne(cascade = CascadeType.MERGE)
-    private Category category;
-    @OneToOne(cascade = CascadeType.MERGE)
-    private User sellar;
+    
+    // @OneToOne(cascade = CascadeType.MERGE)
+    // private Category category;
+    
+    // @OneToOne(cascade = CascadeType.MERGE)
+    // private User sellar;
+    
     private String itemName;
     private Double price;
     private String description;

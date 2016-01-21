@@ -23,8 +23,10 @@ public class CustomerPhone implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToOne(cascade = CascadeType.MERGE)
-    private Customer customer;
+    
+    //@OneToOne(cascade = CascadeType.MERGE)
+    //private Customer customer;
+    
     private String phoneNo;
 
     public Long getId() {
@@ -43,13 +45,13 @@ public class CustomerPhone implements Serializable {
         this.phoneNo = phoneNo;
     }
 
-    public Customer getCustomer() {
+    /*public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
-    }
+    }*/
 
     @Override
     public int hashCode() {

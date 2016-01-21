@@ -23,10 +23,13 @@ public class ItemCategory implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToOne(cascade = CascadeType.MERGE)
-    private Item item;
-    @OneToOne(cascade = CascadeType.MERGE)
-    private Category category;
+    
+    //@OneToOne(cascade = CascadeType.MERGE)
+    //private Item item;
+    
+    //@OneToOne(cascade = CascadeType.MERGE)
+    //private Category category;
+    
     private Double amount;
 
     public Long getId() {
@@ -45,7 +48,7 @@ public class ItemCategory implements Serializable {
         this.amount = amount;
     }
 
-    public Item getItem() {
+    /*public Item getItem() {
         return item;
     }
 
@@ -59,7 +62,7 @@ public class ItemCategory implements Serializable {
 
     public void setCategory(Category category) {
         this.category = category;
-    }
+    }*/
 
     @Override
     public int hashCode() {

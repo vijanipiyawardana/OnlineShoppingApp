@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
@@ -26,8 +27,10 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToOne(cascade = CascadeType.MERGE)
-    private Customer customer;
+    
+    // @ManyToOne
+    // private Customer customer;
+    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date orderedDate;
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -43,13 +46,14 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-    public Customer getCustomer() {
+   /* public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+    */
 
     public Date getOrderedDate() {
         return orderedDate;
