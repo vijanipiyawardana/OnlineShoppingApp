@@ -21,9 +21,11 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;   
-    @OneToOne
-    private Customer customer;
+    private Long id;  
+    
+    
+    // private Customer customer;
+    
     private String username;
     private String password;
 
@@ -35,14 +37,7 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
+  
     public String getUsername() {
         return username;
     }

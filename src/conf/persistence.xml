@@ -5,13 +5,13 @@
     <class>com.vijani.entity.Customer</class>
     <class>com.vijani.entity.Category</class>
     <class>com.vijani.entity.User</class>
-    <class>com.vijani.entity.Order</class>
     <class>com.vijani.entity.Item</class>
-    <class>com.vijani.entity.CustomerAddress</class>
     <class>com.vijani.entity.CustomerPhone</class>
     <class>com.vijani.entity.ItemImage</class>
     <class>com.vijani.entity.OrderItem</class>
     <class>com.vijani.entity.ItemCategory</class>
+    <class>com.vijani.entity.CustomerAddress</class>
+    <class>com.vijani.entity.Order</class>
     <class>com.vijani.entity.Payment</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>

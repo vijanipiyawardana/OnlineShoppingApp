@@ -21,6 +21,10 @@ public class ItemImage implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    // private Item item;
+    
+    private String imageName;
 
     public Long getId() {
         return id;
@@ -30,6 +34,14 @@ public class ItemImage implements Serializable {
         this.id = id;
     }
 
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;

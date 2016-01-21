@@ -6,10 +6,12 @@
 package com.vijani.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -21,6 +23,18 @@ public class Item implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    // private Category category;
+    
+    // private Customer sellar;
+    
+    private String itemName;
+    private Double price;
+    private String description;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date addedDate;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date expireDate;
 
     public Long getId() {
         return id;
@@ -30,6 +44,48 @@ public class Item implements Serializable {
         this.id = id;
     }
 
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Date getAddedDate() {
+        return addedDate;
+    }
+
+    public void setAddedDate(Date addedDate) {
+        this.addedDate = addedDate;
+    }
+
+    public Date getExpireDate() {
+        return expireDate;
+    }
+
+    public void setExpireDate(Date expireDate) {
+        this.expireDate = expireDate;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;

@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 /**
  *
@@ -22,11 +21,15 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @OneToOne
-    private Customer customer;
-    //private date orderDate;
-    //private date deliveryDate;
+    
+    
+   // private Customer customer;
+    
+    
+    // private date orderedDate;
+    // private date deliveryDate;
     private String status;
+    
 
     public Long getId() {
         return id;

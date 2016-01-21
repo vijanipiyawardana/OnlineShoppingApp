@@ -21,6 +21,14 @@ public class CustomerAddress implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    // private Customer customer;
+    
+    private String doorNo;
+    private String streetName;
+    private String city;
+    private String postCode;
+    private Boolean markDefault;
 
     public Long getId() {
         return id;
@@ -28,6 +36,46 @@ public class CustomerAddress implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getDoorNo() {
+        return doorNo;
+    }
+
+    public void setDoorNo(String doorNo) {
+        this.doorNo = doorNo;
+    }
+
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPostCode() {
+        return postCode;
+    }
+
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
+    }
+
+    public Boolean getMarkDefault() {
+        return markDefault;
+    }
+
+    public void setMarkDefault(Boolean markDefault) {
+        this.markDefault = markDefault;
     }
 
     @Override
