@@ -6,6 +6,7 @@
 package com.vijani.entity;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,11 +23,8 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;  
-    
-    
-    @OneToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     private Customer customer;
-    
     private String username;
     private String password;
 
@@ -53,6 +51,14 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     @Override

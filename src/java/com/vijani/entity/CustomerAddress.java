@@ -6,10 +6,12 @@
 package com.vijani.entity;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -21,9 +23,8 @@ public class CustomerAddress implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    // private Customer customer;
-    
+    @OneToOne(cascade = CascadeType.MERGE)
+    private Customer customer;
     private String doorNo;
     private String streetName;
     private String city;
@@ -76,6 +77,14 @@ public class CustomerAddress implements Serializable {
 
     public void setMarkDefault(Boolean markDefault) {
         this.markDefault = markDefault;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     @Override

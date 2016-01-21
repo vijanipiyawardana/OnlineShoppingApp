@@ -6,10 +6,12 @@
 package com.vijani.entity;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -21,11 +23,10 @@ public class ItemCategory implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-   // private Item item;
-    
-   // private Category category;
-    
+    @OneToOne(cascade = CascadeType.MERGE)
+    private Item item;
+    @OneToOne(cascade = CascadeType.MERGE)
+    private Category category;
     private Double amount;
 
     public Long getId() {
@@ -42,6 +43,22 @@ public class ItemCategory implements Serializable {
 
     public void setAmount(Double amount) {
         this.amount = amount;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @Override

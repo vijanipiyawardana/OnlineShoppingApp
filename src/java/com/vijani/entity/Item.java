@@ -7,6 +7,7 @@ package com.vijani.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,13 +25,10 @@ public class Item implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    @OneToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     private Category category;
-    
-    @OneToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     private User sellar;
-    
     private String itemName;
     private Double price;
     private String description;

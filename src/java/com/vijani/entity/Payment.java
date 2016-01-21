@@ -6,6 +6,7 @@
 package com.vijani.entity;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,10 +23,8 @@ public class Payment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    @OneToOne
+    @OneToOne(cascade = CascadeType.MERGE)
     private Order order;
-    
     private String paymentType;
     private Double amount;
 
@@ -51,6 +50,14 @@ public class Payment implements Serializable {
 
     public void setAmount(Double amount) {
         this.amount = amount;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     @Override

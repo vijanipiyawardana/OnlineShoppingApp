@@ -19,8 +19,6 @@ import javax.persistence.OneToOne;
 @Entity
 public class Category implements Serializable {
     
-    @OneToOne(mappedBy = "category")
-    private Item item;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
