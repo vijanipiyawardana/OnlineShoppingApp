@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 /**
@@ -24,8 +25,8 @@ public class CustomerAddress implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    // @OneToOne(cascade = CascadeType.MERGE)
-    // private Customer customer;
+    @ManyToOne
+    private Customer customer;
     
     private String doorNo;
     private String streetName;
@@ -81,14 +82,13 @@ public class CustomerAddress implements Serializable {
         this.markDefault = markDefault;
     }
 
-   /* public Customer getCustomer() {
+    public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
-    */
 
     @Override
     public int hashCode() {

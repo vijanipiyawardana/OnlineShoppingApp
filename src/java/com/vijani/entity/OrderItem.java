@@ -24,11 +24,11 @@ public class OrderItem implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    //@OneToOne(cascade = CascadeType.MERGE)
-    //private Order order;
+    @OneToOne(cascade = CascadeType.MERGE)
+    private Order order;
     
-    //@OneToOne(cascade = CascadeType.MERGE)
-    //private Item item;
+    @OneToOne(cascade = CascadeType.MERGE)
+    private Item item;
     
     private Double amount;
 
@@ -48,7 +48,7 @@ public class OrderItem implements Serializable {
         this.amount = amount;
     }
 
-    /*public Order getOrder() {
+    public Order getOrder() {
         return order;
     }
 
@@ -62,7 +62,7 @@ public class OrderItem implements Serializable {
 
     public void setItem(Item item) {
         this.item = item;
-    }*/
+    }
 
     @Override
     public int hashCode() {

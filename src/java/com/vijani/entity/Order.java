@@ -28,8 +28,8 @@ public class Order implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    // @ManyToOne
-    // private Customer customer;
+    @ManyToOne
+    private Customer customer;
     
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date orderedDate;
@@ -46,14 +46,13 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-   /* public Customer getCustomer() {
+    public Customer getCustomer() {
         return customer;
     }
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
-    */
 
     public Date getOrderedDate() {
         return orderedDate;

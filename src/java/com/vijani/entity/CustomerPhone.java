@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 /**
@@ -24,9 +25,10 @@ public class CustomerPhone implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    //@OneToOne(cascade = CascadeType.MERGE)
-    //private Customer customer;
+    @ManyToOne
+    private Customer owner;
     
+    private String phoneType;
     private String phoneNo;
 
     public Long getId() {
@@ -45,13 +47,21 @@ public class CustomerPhone implements Serializable {
         this.phoneNo = phoneNo;
     }
 
-    /*public Customer getCustomer() {
-        return customer;
+    public Customer getOwner() {
+        return owner;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }*/
+    public void setOwner(Customer owner) {
+        this.owner = owner;
+    }
+
+    public String getPhoneType() {
+        return phoneType;
+    }
+
+    public void setPhoneType(String phoneType) {
+        this.phoneType = phoneType;
+    }
 
     @Override
     public int hashCode() {

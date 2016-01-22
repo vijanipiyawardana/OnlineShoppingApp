@@ -6,10 +6,12 @@
 package com.vijani.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -17,6 +19,13 @@ import javax.persistence.Id;
  */
 @Entity
 public class Customer implements Serializable {
+    
+    @OneToMany(mappedBy = "customer")
+    private List<CustomerAddress> customerAddresss;
+    
+    @OneToMany(mappedBy = "owner")
+    private List<CustomerPhone> customerPhones;
+    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -55,6 +64,22 @@ public class Customer implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<CustomerPhone> getCustomerPhones() {
+        return customerPhones;
+    }
+
+    public void setCustomerPhones(List<CustomerPhone> customerPhones) {
+        this.customerPhones = customerPhones;
+    }
+
+    public List<CustomerAddress> getCustomerAddresss() {
+        return customerAddresss;
+    }
+
+    public void setCustomerAddresss(List<CustomerAddress> customerAddresss) {
+        this.customerAddresss = customerAddresss;
     }
 
     @Override
